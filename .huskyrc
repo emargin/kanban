@@ -1,0 +1,6 @@
+{
+    "hooks": {
+        "prepare-commit-msg": "npx devmoji -e",
+        "pre-commit": "npx lint-staged"
+    }
+}

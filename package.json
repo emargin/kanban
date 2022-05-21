@@ -1,0 +1,33 @@
+{
+    "name": "gruppovoy-proekt-team",
+    "version": "0.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/teamdevm/gruppovoy-proekt-team.git"
+    },
+    "bugs": {
+        "url": "https://github.com/teamdevm/gruppovoy-proekt-team/issues"
+    },
+    "homepage": "https://github.com/teamdevm/gruppovoy-proekt-team#readme",
+    "devDependencies": {
+        "@babel/core": "^7.15.8",
+        "@babel/eslint-parser": "^7.16.3",
+        "@babel/node": "^7.15.8",
+        "@babel/preset-env": "^7.15.8",
+        "devmoji": "^2.3.0",
+        "eslint": "^8.0.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-loader": "^4.0.2",
+        "eslint-plugin-import": "^2.24.2",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-security": "^1.4.0",
+        "husky": "^4.3.8",
+        "lint-staged": "^11.2.3",
+        "prettier": "^2.4.1"
+    },
+    "dependencies": {
+        "npm": "^8.1.4",
+        "react-redux": "^7.2.6",
+        "redux": "^4.1.2"
+    }
+}

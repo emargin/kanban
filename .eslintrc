@@ -1,0 +1,31 @@
+{
+    "parser": "@babel/eslint-parser",
+    "extends": ["prettier", "plugin:security/recommended"],
+    "plugins": ["prettier", "security"],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "rules": {
+        "prettier/prettier": "error",
+        "class-methods-use-this": "off",
+        "no-underscore-dangle": "off",
+        "no-param-reassign": "off",
+        "camelcase": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "next"
+            }
+        ],
+        "import/prefer-default-export": "off",
+        "no-console": "off"
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    }
+}
