@@ -4,9 +4,9 @@ Kanban - это веб сервис для совместной разработ
 Конфигурация проекта:
 > Create React App
 > Eslint
->TypeScript(?)
->React (Hooks)
->Material UI
->Redux
++ TypeScript(?)
+-React (Hooks)
+*Material UI
+*Redux
 
 > На этом этапе возможны баги недоработки.
