@@ -1,7 +1,11 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
 import styles from './WorkSpace.module.scss'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
+import NavPanel from '../../components/NavPanel/NavPanel'
+import Tasks from '../Tasks/Tasks'
+import Releases from '../Releases/Releases'
+import Reports from '../Reports/Reports'
 
 const WorkSpace = (): JSX.Element => {
     return (
@@ -9,9 +13,9 @@ const WorkSpace = (): JSX.Element => {
             <header className={styles.header}>
                 <h2 className={styles.title}>Works Space</h2>
                 <Button
+                    className={styles.btn}
                     variant="contained"
                     color="primary"
-                    className={styles.btn}
                     // onClick={handleClickOpen}
                 >
                     Создать задачу
@@ -21,6 +25,14 @@ const WorkSpace = (): JSX.Element => {
                     Выйти
                 </Link>
             </header>
+            <div className={styles.layout}>
+                <NavPanel />
+                {/* <Route path="/workSpace/canban">
+                </Route> */}
+                {/* <Route path="/workSpace/tasks" element={<Tasks />} />
+                <Route path="/workSpace/reports" element={<Reports />} />
+                <Route path="/workSpace/releases" element={<Releases />} /> */}
+            </div>
         </section>
     )
 }

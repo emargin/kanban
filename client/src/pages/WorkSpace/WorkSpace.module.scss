@@ -12,7 +12,7 @@
 .userInfo {
     margin: auto 0;
     color: #fff;
-    font-size: 20px
+    font-size: 20px;
 }
 .layout {
     display: flex;
@@ -25,8 +25,8 @@
     font-weight: 100;
     margin: auto 0 auto 25px;
 }
-.btn{
-    background-color: #EC5990;
+.btn {
+    background-color: #EC5990!important;
     color: #fff;
     text-transform: none;
     height: 30px;
@@ -34,13 +34,13 @@
     justify-content: center;
     margin: auto;
     &:hover{
-        background-color: #bf1650;
+        background-color: #bf1650!important;
     }
 }
 .loader {
     position: absolute;
     left: 50%;
-    top: 50%
+    top: 50%;
 }
 .link{
     margin: auto 30px;
