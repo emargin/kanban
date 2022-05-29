@@ -1,21 +1,20 @@
-import instance from "./instance"
-
+import instance from './instance'
 
 interface IAuthRequest {
-    email: string,
+    email: string
     password: string
 }
 
-interface IRegRequest extends IAuthRequest{
+interface IRegRequest extends IAuthRequest {
     username: string
 }
 
 export const API = {
-    fetchAuth (request: IAuthRequest){
+    fetchAuth(request: IAuthRequest) {
         return instance.post('/login', request)
     },
-    fetchReg (request: IRegRequest) {
-        return instance.post('/registration', request)  
+    fetchReg(request: IRegRequest) {
+        return instance.post('/registration', request)
     },
     sighOut() {
         return instance.get('/logout')
@@ -26,7 +25,7 @@ export const API = {
     fetchTasks() {
         return instance.get('/tasks')
     },
-    fetchTaskStatuses () {
+    fetchTaskStatuses() {
         return instance.get('/statuses')
     },
     fetchTaskPriority() {
