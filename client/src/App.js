@@ -45,8 +45,8 @@ const fetchCheckAuth = async() => {
         <CircularProgress style={{position:'absolute', left: '50%', top: '50%'}}/>
         :
         <Route path="/workSpace">
-            {isAuth ? <WorkSpace setAuth = {setAuth} user={user} fetchCheckAuth = {fetchCheckAuth}/> : <Redirect to = "/auth"/>}
-            {/* <WorkSpace setAuth = {setAuth} user={user} fetchCheckAuth = {fetchCheckAuth}/> */}
+            {/* {isAuth ? <WorkSpace setAuth = {setAuth} user={user} fetchCheckAuth = {fetchCheckAuth}/> : <Redirect to = "/auth"/>} */}
+            <WorkSpace setAuth = {setAuth} user={user} fetchCheckAuth = {fetchCheckAuth}/>
         </Route>        
       }
         

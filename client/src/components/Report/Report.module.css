@@ -1,0 +1,23 @@
+.report{
+    margin: 15px auto;
+    box-shadow: 0 0 9px 0 #010817;
+    padding: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 315px;
+    text-align: center;
+    
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+.img {    
+    height: 200px;
+    width: 200px;
+}
+
+.img:hover {
+    transform: scale(1.05);
+}

@@ -7,9 +7,9 @@ import {Route, Switch, Link} from 'react-router-dom';
 
 
 // *** OTHER ***
-import Tasks from '../../pages/Tasks'
-import Reports from '../../pages/Reports'
-import Releases from '../../pages/Releases'
+import Tasks from '../../pages/Tasks/Tasks'
+import Reports from '../../pages/Reports/Reports'
+import Releases from '../../pages/Releases/Releases'
 import KanbanDesk from '../KanbanDesk/KanbanDesk'
 import instance from '../../instance/instance'
 import TaskDialog from '../TaskDialog/TaskDialog';

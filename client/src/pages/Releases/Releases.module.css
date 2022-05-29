@@ -1,0 +1,36 @@
+.releases {
+    width: 100%;
+    color: #fff;
+    padding: 20px 50px;
+    /* background-color: #081229; */
+}
+
+
+.card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* background-color: #0E101C; */
+    /* flex-direction: row;
+    justify-content: space-between; */
+    border: 1px solid #516391;
+    min-height: 50px;
+    border-radius: 6px;
+    padding: 5px 20px;
+    margin-top: 12px;
+    cursor: pointer;
+    
+}
+.card:hover{
+    border-color: #bf1650;
+    transform: scale(1.03);
+    /* background-color: #1a202e; */
+}
+.cardTitle{
+    margin-left: 30px;
+}
+
+.date {
+    margin-left: auto;
+    margin-right: 0;
+}
