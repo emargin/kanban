@@ -1,0 +1,51 @@
+.workSpace{
+        
+}
+.header {
+    height: 90px;
+    width: 100%;
+    background-color: #1e2a4a;
+    display: flex; 
+    flex-direction: row;
+    
+}
+.userInfo {
+    margin: auto 0;
+    color: #fff;
+    font-size: 20px
+}
+.layout {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.title {
+    color: #EC5990;
+    font-size: 40px;
+    font-weight: 100;
+    margin: auto 0 auto 25px;
+}
+.btn{
+    background-color: #EC5990;
+    color: #fff;
+    text-transform: none;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    &:hover{
+        background-color: #bf1650;
+    }
+}
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%
+}
+.link{
+    margin: auto 30px;
+    color: #fff;
+    &:hover{
+        color: #bf1650
+    }
+}
