@@ -210,7 +210,7 @@ const WorkSpace = (props) => {
             </header>
             <div className={styles.layout}>
                 <NavPanel isActiveNavElem={isActiveNavElem} setActiveNavElem={setActiveNavElem}/>
-                <Route exact path = "/workSpace/canban">
+                <Route exact path = "/workSpace/kanban">
                     <TaskDialog
                         isTaskDialogOpen={isTaskDialogOpen}
                         setTaskDialogOpen={setTaskDialogOpen}

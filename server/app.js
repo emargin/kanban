@@ -13,7 +13,6 @@ import './db/connection'
 import routes from './routes'
 
 const app = express()
-
 // settings
 app.use(logger('dev'))
 app.use(express.json())

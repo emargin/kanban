@@ -20,9 +20,6 @@ const useStyles = makeStyles({
 
 })
 
-
-
-// DRAG AND DROP HERE 
 const KanbanDesk = (props) => {
     const styles = useStyles();
     const {
