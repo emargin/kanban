@@ -17,7 +17,6 @@ import NavPanel from '../NavPanel/NavPanel';
 
 const useStyles = makeStyles({
     workSpace:{
-        
     },
     header:  {
         height: '90px',
@@ -62,8 +61,6 @@ const useStyles = makeStyles({
             color: '#bf1650'
         }
     },
-    
-
 })
 
 
@@ -176,12 +173,13 @@ const WorkSpace = (props) => {
         }
     }
 
+    
+
     useEffect(()=>{
         fetchTasks()
         fetchTaskStatus()
         fetchTaskPriority()
         fetchUsers()
-        fetchBoard()
         fetchCheckAuth()
     },[])
 

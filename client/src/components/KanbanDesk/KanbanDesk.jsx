@@ -12,7 +12,7 @@ import instance from '../../instance/instance'
 const useStyles = makeStyles({
     kanbanDesk:{
         height: '90vh',
-        width: '85%',
+        width: '100%',
         backgroundColor: '#0E101C',
         margin: 'auto'
     },
@@ -20,6 +20,9 @@ const useStyles = makeStyles({
 
 })
 
+
+
+// DRAG AND DROP HERE 
 const KanbanDesk = (props) => {
     const styles = useStyles();
     const {
