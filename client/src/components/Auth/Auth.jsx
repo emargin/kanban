@@ -129,7 +129,7 @@ const Auth = (props) => {
         try {
             const response = await instance.post('/login', request)
             setAuth(true)    
-            history.push('/workSpace') 
+            history.push('/workSpace/kanban') 
            
         } catch (error) {
             console.log(error)

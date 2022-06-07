@@ -12,7 +12,8 @@ import instance from '../../instance/instance'
 const useStyles = makeStyles({
     kanbanDesk:{
         height: '90vh',
-        width: '100%',
+        minHeight: '400px',
+        // width: '100%',
         backgroundColor: '#0E101C',
         margin: 'auto'
     },

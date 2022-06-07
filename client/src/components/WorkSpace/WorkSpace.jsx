@@ -180,6 +180,7 @@ const WorkSpace = (props) => {
         fetchTaskStatus()
         fetchTaskPriority()
         fetchUsers()
+        fetchBoard()
         fetchCheckAuth()
     },[])
 
