@@ -9,23 +9,10 @@ import './KanbanDesk.css'
 import instance from '../../instance/instance'
 
 
-const useStyles = makeStyles({
-    kanbanDesk:{
-        height: '90vh',
-        minHeight: '400px',
-        // width: '100%',
-        backgroundColor: '#0E101C',
-        margin: 'auto'
-    },
-    stateHeader: {}
-
-})
-
 
 
 // DRAG AND DROP HERE 
 const KanbanDesk = (props) => {
-    const styles = useStyles();
     const {
         boards,
         setBoards,
@@ -150,13 +137,7 @@ const KanbanDesk = (props) => {
     }
 
     return(
-        <section className = {styles.kanbanDesk}>
-            <div className = {styles.state}>
-                <div className = {styles.stateHeader}>
-                    <span></span>
-                </div>
-            </div>
-            <div className = 'kanban__desk'>
+            <section className = 'kanban__desk'>
             {boards && boards.map(board =>
                 <div className = 'board'
                     id={board._id}
@@ -195,9 +176,8 @@ const KanbanDesk = (props) => {
                         </div>
                         )}
                 </div>)}
-        </div>
-
         </section>
+
     )
 
 }
