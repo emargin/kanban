@@ -17,7 +17,7 @@ const useStyles = makeStyles({
         backgroundColor: '#1a202e',
         width: '72px',
         maxHeight: '100vh',
-        height: '100vh',
+        height: 'calc(100vh - 90px)',
         position: 'sticky',
         top: 0,
         zIndex: 100,

@@ -7,6 +7,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 // *** OTHER ***
 import './KanbanDesk.css'
 import instance from '../../instance/instance'
+import icon from '../../img/priorities/high.svg'
 
 
 
@@ -166,10 +167,18 @@ const KanbanDesk = (props) => {
                                     <EditIcon className='action_icon' onClick={event => editTask(event, item._id)}/>
                                     <DeleteIcon className='action_icon' onClick={event => deleteTask(event, item._id)}/>
                                 </div>
-                            </div>                            
+                            </div>
                             <span>{item.description}</span>
+
+                            <div className='info'>
+                                <span className='priority'><b>Приоретет: 
+                                    </b>{item?.priority?.name}                                    
+                                    <img className='icon' src={icon} alt='icon'/>
+                                </span>    
+                            </div>
                             
-                            <span className='priority'><b>Приоретет: </b>{item?.priority?.name}</span>    
+                            
+                            
                             <span className='author'><b>Автор: </b>{item?.author?.username}</span>                            
                             <span className='implementers'><b>Исполнитель: </b>{item?.implementers[0]?.username}</span>
                             

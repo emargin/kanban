@@ -1,6 +1,7 @@
 import React from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 import { Button} from '@material-ui/core'
+import TaskCard from '../../components/TaskCard/TaskCard'
 
 const useStyles = makeStyles({
     tasks: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
     },
     card: {
         backgroundColor: '#fff',
-        width: '250px',
+        width: '310px',
         height: '82px',
         boxShadow: '1px 1px 1px',
         margin: '15px',
@@ -26,14 +27,22 @@ const useStyles = makeStyles({
         color: '#bf1650',
         marginLeft: '20px'
     },
+    taskInfo: {
+        margin: 0
+    },
     taskDescribe: {        
         width:'100%',
         height: '100%',
         color: '#fff',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        padding: '0 20px'
     },
+    btn: {
+        marginLeft: '10px',
+    },
+    gruopBtn: {
+        position: 'absolute',
+        bottom: '10%',
+    }
 })
 
 const Tasks = () => {
@@ -45,13 +54,13 @@ const Tasks = () => {
     return (
         <section className={styles.tasks}>
             <div className={styles.cards}>
-                <div className={styles.card} onClick={handleClick}>CARD</div>
-                <div className={styles.card}>CARD</div>
-                <div className={styles.card}>CARD</div>
+                <TaskCard/>
+                <TaskCard/>
+                <TaskCard/>
             </div>
             <hr className={styles.line}/>
             <div className={styles.taskDescribe}>
-                <div>
+                <div className={styles.taskInfo}>
                     <p>Номер задачи</p>
                     <h2>Наименование задачи</h2>
                 </div>

@@ -13,7 +13,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow-y: scroll;
   }
   
   .board {
@@ -21,7 +20,7 @@
     min-width: 254px;
     min-height: 400px;
     height: 100%;
-    border: 5px solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     padding: 20px 10px;
     border-radius: 12px;
     /* margin: 10px; */
@@ -41,12 +40,12 @@
 .item {
   width: 100%;
   min-width: 200px;
-  border: 2px solid rgb(255, 255, 255);
+  border: 1px solid rgb(34, 34, 34);
   padding: 10px;
   border-radius: 6px;
   margin: 5px 0;
   cursor: grab;
-  background-color: plum;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
 
@@ -73,4 +72,14 @@
 .action_icon:hover {
     cursor: pointer;
     color: #bf1650
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }

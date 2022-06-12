@@ -1,0 +1,17 @@
+.card {
+    background-color: #fff;
+    width: 310px;
+    height: 82px;
+    box-shadow: 1px 1px 1px;
+    margin: 15px;
+    border-radius: 5px;
+}
+.info {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
