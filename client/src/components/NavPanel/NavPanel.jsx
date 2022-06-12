@@ -129,7 +129,7 @@ const NavPanel = (props) => {
             <hr className={styles.line}></hr>
             <Button
                 id="kanban"
-                className={`${styles.navBtn} ${isActiveNavElem === 'canban' ? styles.active : ''}`}
+                className={`${styles.navBtn} ${isActiveNavElem === 'kanban' ? styles.active : ''}`}
                 onClick={handleClick}
             >
                 <DesktopWindowsIcon className={styles.navImg}/>

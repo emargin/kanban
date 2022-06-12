@@ -1,10 +1,16 @@
 .card {
     background-color: #fff;
-    width: 310px;
+    min-width: 310px;    
+    /* width: auto; */
     height: 82px;
     box-shadow: 1px 1px 1px;
     margin: 15px;
     border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.card:hover {
+    background-color: rgb(211, 205, 205);
 }
 .info {
     display: flex;

@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
-import {makeStyles} from '@material-ui/core/styles'
-import { Button} from '@material-ui/core'
+import React, { useEffect, useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { Button } from '@material-ui/core'
 
 import closeIcon from '../../img/close_icon.svg'
 import TaskCard from '../../components/TaskCard/TaskCard'
+import instance from '../../instance/instance'
+
 
 const useStyles = makeStyles({
     tasks: {
@@ -17,12 +19,13 @@ const useStyles = makeStyles({
         
     },
     cards: {
+       // width: '100%', // ?
         height: '100%',
         margin: 'auto',
     },
     card: {
         backgroundColor: '#fff',
-        width: '310px',
+        minWidth: '310px',
         height: '82px',
         boxShadow: '1px 1px 1px',
         margin: '15px',
@@ -60,37 +63,64 @@ const useStyles = makeStyles({
     closeIcon: {
         width: '40px',
         height: '40px',
-        fill: '#fff'
+        color: '#fff',
+        cursor: 'pointer',
+        '&:hover': {
+            color: '#bf1650'
+        }
     }
 })
 
 const Tasks = () => {
     const styles = useStyles()
     const [isTaskOpen, setTaskOpen] = useState(false)
+    const [tasks, setTasks] = useState(null)
+    const [activeTask, setActiveTask] = useState(null)
 
-    const handleOpenCardDescribe = () => {
+    const handleOpenCardDescribe = (task) => (e) => {
+        e.stopPropagation()
+        // console.log(e.currentTarget.id)
+        // console.log('task', task)
+        setActiveTask(task)
         setTaskOpen(true)
+        
     }
 
     const handleCloseCardDescribe = () => {
         setTaskOpen(false)
     }
+
+    useEffect(() => {
+        const fetchTasks = async() => {
+            try {
+                const response = await instance.get('/tasks')
+                setTasks(response.data)
+            }
+            catch(error) {
+                console.log(error)
+            }
+        }
+        fetchTasks()
+    },[tasks])
     return (
         <section className={styles.tasks}>
             <div className={styles.cards} >
+                {tasks && tasks.map((task) => {
+                    return <TaskCard key={task._id} task={task} onOpen={handleOpenCardDescribe(task)} />
+                })}
+                {/* <TaskCard onOpen={handleOpenCardDescribe} />
                 <TaskCard onOpen={handleOpenCardDescribe} />
-                <TaskCard onOpen={handleOpenCardDescribe} />
-                <TaskCard onOpen={handleOpenCardDescribe} />
+                <TaskCard onOpen={handleOpenCardDescribe} /> */}
             </div>
             <hr className={styles.line}/>
             <div className={`${styles.taskDescribe} ${isTaskOpen && styles.openDescribe}`}>
                 
                 <img src={closeIcon} alt='close icon' onClick={handleCloseCardDescribe} className={styles.closeIcon} />
                 <div className={styles.taskInfo}>
-                    <p>Номер задачи</p>
-                    <h2>Наименование задачи</h2>
+                    <p>Номер задачи: {activeTask?._id}</p>
+                    <h2>Наименование задачи: {activeTask?.name}</h2>
                 </div>
-                <p> Описание задачи</p>
+                <p>{activeTask?.description}</p>
 
                 <div className={styles.gruopBtn}>
                     <Button
