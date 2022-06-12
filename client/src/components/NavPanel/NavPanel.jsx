@@ -120,7 +120,7 @@ const NavPanel = (props) => {
     };
 
     return (
-        <nav className={`${styles.navPanel}  ${isOpen && styles.openNav}`}>
+        <nav className={`${styles.navPanel} ${isOpen && styles.openNav}`}>
             <div className={styles.openNavGroup}>
                 <Button className={styles.openNavBtn} onClick={() => changeNav(!isOpen)}>
                     <ArrowForwardIosIcon className={`${styles.arrowIcon} ${isOpen ? styles.rotateArrow : ''}`}></ArrowForwardIosIcon>

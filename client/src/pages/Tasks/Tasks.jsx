@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 import { Button} from '@material-ui/core'
+
+import closeIcon from '../../img/close_icon.svg'
 import TaskCard from '../../components/TaskCard/TaskCard'
 
 const useStyles = makeStyles({
@@ -10,6 +12,8 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'row',
         padding: '20px',
+        
+        overflowX: 'hidden',
         
     },
     cards: {
@@ -25,41 +29,63 @@ const useStyles = makeStyles({
     },
     line: {
         color: '#bf1650',
-        marginLeft: '20px'
+        // color: '#fff',
+        marginLeft: '20px',
+        marginRight: '20px'
     },
     taskInfo: {
-        margin: 0
+        margin: 0,
     },
     taskDescribe: {        
-        width:'100%',
+        width:'0%',
         height: '100%',
-        color: '#fff',
-        padding: '0 20px'
+        color: '#fff',        
+        overflow: 'hidden',
+        transition: 'width 0.6s ease-in-out ', 
+    },
+    openDescribe: {
+        overflow: 'visible',
+        // padding: '0 20px',        
+        
+        // margin: '0 20px',    
+        width: '100%',
     },
     btn: {
         marginLeft: '10px',
     },
     gruopBtn: {
-        position: 'absolute',
+        // position: 'absolute',
         bottom: '10%',
+    },
+    closeIcon: {
+        width: '40px',
+        height: '40px',
+        fill: '#fff'
     }
 })
 
 const Tasks = () => {
     const styles = useStyles()
+    const [isTaskOpen, setTaskOpen] = useState(false)
 
-    const handleClick = () => {
-        console.log('click')
+    const handleOpenCardDescribe = () => {
+        setTaskOpen(true)
+    }
+
+    const handleCloseCardDescribe = () => {
+        setTaskOpen(false)
     }
     return (
         <section className={styles.tasks}>
-            <div className={styles.cards}>
-                <TaskCard/>
-                <TaskCard/>
-                <TaskCard/>
+            <div className={styles.cards} >
+                <TaskCard onOpen={handleOpenCardDescribe} />
+                <TaskCard onOpen={handleOpenCardDescribe} />
+                <TaskCard onOpen={handleOpenCardDescribe} />
             </div>
             <hr className={styles.line}/>
-            <div className={styles.taskDescribe}>
+            <div className={`${styles.taskDescribe} ${isTaskOpen && styles.openDescribe}`}>
+                
+                <img src={closeIcon} alt='close icon' onClick={handleCloseCardDescribe} className={styles.closeIcon} />
                 <div className={styles.taskInfo}>
                     <p>Номер задачи</p>
                     <h2>Наименование задачи</h2>
