@@ -17,6 +17,8 @@ import NavPanel from '../NavPanel/NavPanel';
 
 const useStyles = makeStyles({
     workSpace:{
+        height: '1080px',
+        // overflowY: 'hidden'
     },
     header:  {
         height: '90px',
@@ -27,9 +29,11 @@ const useStyles = makeStyles({
         
     },
     layout: {
+        height: '100%',        
         display: 'flex',
         flexDirection: 'row',
         position: 'relative',
+        // overflowY: 'scroll',
     },
     title: {
         color: '#EC5990',

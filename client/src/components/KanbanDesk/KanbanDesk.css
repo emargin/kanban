@@ -59,6 +59,9 @@
 .priority {
     padding-top: 12px;
     font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .action_icons {
@@ -80,6 +83,6 @@
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
 }

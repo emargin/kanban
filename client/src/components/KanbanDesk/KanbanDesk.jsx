@@ -7,7 +7,22 @@ import DeleteIcon from '@material-ui/icons/Delete';
 // *** OTHER ***
 import './KanbanDesk.css'
 import instance from '../../instance/instance'
-import icon from '../../img/priorities/high.svg'
+import critical from '../../img/priorities/critical.svg'
+import highest from '../../img/priorities/highest.svg'
+import high from '../../img/priorities/high.svg'
+import medium from '../../img/priorities/medium.svg'
+import low from '../../img/priorities/low.svg'
+import lowest from '../../img/priorities/lowest.svg'
+
+
+export const prirityImg  = {
+    '61bd94e0ceae6eaeb1f8df3c': critical,
+    '61bd9502ceae6eaeb1f8df3d':highest,
+    '61bd9515ceae6eaeb1f8df3e': high,
+    '61bd9522ceae6eaeb1f8df3f': medium,
+    '61bd9530ceae6eaeb1f8df40': low,
+    '61bd9540ceae6eaeb1f8df41': lowest,
+}
 
 
 
@@ -171,9 +186,9 @@ const KanbanDesk = (props) => {
                             <span>{item.description}</span>
 
                             <div className='info'>
-                                <span className='priority'><b>Приоретет: 
-                                    </b>{item?.priority?.name}                                    
-                                    <img className='icon' src={icon} alt='icon'/>
+                                <span className='priority'>
+                                    <b>Приоретет: </b> {item?.priority?.name}                                    
+                                    <img className='icon' src={prirityImg[item?.priority._id]} alt='icon'/>
                                 </span>    
                             </div>
                             
