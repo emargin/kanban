@@ -1,7 +1,10 @@
 import { Button, TextField } from '@material-ui/core'
 import React, { FC } from 'react'
 import { useForm } from 'react-hook-form'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import useActions from '../../hooks/useActions'
+import { RootState } from '../../redux/store'
 import styles from './Registration.module.scss'
 
 interface Inputs {
@@ -12,6 +15,8 @@ interface Inputs {
 }
 
 function Registration(): JSX.Element {
+    const { registration } = useActions()
+    const { error } = useSelector((state: RootState) => state.auth)
     const {
         register,
         handleSubmit,
@@ -20,7 +25,11 @@ function Registration(): JSX.Element {
     } = useForm<Inputs>()
 
     const handlerForm = (data: Inputs) => {
-        console.log(data)
+        registration({
+            username: data.name,
+            email: data.email,
+            password: data.password,
+        })
     }
     return (
         <div className={styles.root}>
@@ -88,7 +97,7 @@ function Registration(): JSX.Element {
                             },
                         })}
                     />
-
+                    {error && <span className={styles.errorMsg}> {error} </span>}
                     <Button className={styles.regButton} variant="contained" type="submit">
                         Регистрация
                     </Button>

@@ -1,4 +1,4 @@
-import { API, IAuthRequest } from '../../../api/api'
+import { API, IAuthRequest, IRegRequest } from '../../../api/api'
 import { IUser } from '../../../models/IUser'
 import { AppDispatch } from '../../store'
 import { ActionEnum, SetAuthAction, SetErrorAction, SetIsLoadingAction, SetUserAction } from './types'
@@ -33,6 +33,15 @@ const AuthActionCreators = {
             dispatch(AuthActionCreators.setIsLoading(true))
             dispatch(AuthActionCreators.setUser({} as IUser))
             dispatch(AuthActionCreators.setAuth(false))
+            dispatch(AuthActionCreators.setIsLoading(false))
+        } catch (e) {
+            dispatch(AuthActionCreators.setError('Произошла ошибка'))
+        }
+    },
+    registration: (regRequest: IRegRequest) => async (dispatch: AppDispatch) => {
+        try {
+            dispatch(AuthActionCreators.setIsLoading(true))
+            const response = await API.fetchReg(regRequest)
             dispatch(AuthActionCreators.setIsLoading(false))
         } catch (e) {
             dispatch(AuthActionCreators.setError('Произошла ошибка'))
