@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './Registration.module.scss'
 
-const Registration = (): JSX.Element => {
+const Registration = ():JSX.Element => {
     return <></>
 }
 

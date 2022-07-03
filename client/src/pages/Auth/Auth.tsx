@@ -1,9 +1,9 @@
 import { Button, TextField } from '@material-ui/core'
-import React from 'react'
+import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Auth.module.scss'
 
-const Auth = (): JSX.Element => {
+const Auth = ():JSX.Element => {
     return (
         <section className={styles.loginPage}>
             <div className={styles.loginWindow}>
