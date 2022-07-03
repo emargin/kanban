@@ -22,28 +22,17 @@
     justify-content: center;
     align-items: center;
 }
-.loginTitle {
+.title {
     margin: 13px 0 30px 0;
     font-size: 30px;
     color: #EC5990;
     font-weight: 100;
 }
-.loginPostTitle {
-    font-size: 14px;
-    margin-top: 10px;
-}
+
 .input {
     margin: 0 24px 34px 24px;
     width: 280px;
     height: 50px;
-    & input::-webkit-clear-button,
-    & input::-webkit-outer-spin-button,
-    & input::-webkit-inner-spin-button {
-        display: none;
-    };
-    & input[number] {
-        -moz-appearance: textfield;
-    }
 }
 .authButton {
     width: 270px;
@@ -52,7 +41,7 @@
     margin-bottom: 16px;
     margin-top: 15px;
     color: #fff;
-    background-color: #EC5990;
+    background-color: #EC5990!important;
     border: 1px solid #EC5990;
     font-size: 14px;
     text-transform: capitalize;
@@ -69,25 +58,33 @@
         color: #bf1650!important;
     }
 }
-.cssOutlinedInput {
-    color: #fff;
+
+/* LABEL STYLES */
+.input label.Mui-focused {
+    color: #057fa8 !important;
+    font-size: 18px;
+    font-family: Roboto, serif;
 }
 
-.cssFocused {
-    color: #fff;
-    border-color: #fff;
-    // & notchedOutline {
-    //     border-color: "red"
-    // }
+/* INPUT FONT STYLES (on wrapper element not input directly) */
+.input .MuiOutlinedInput-root {
+font-size: 18px;
+font-family: Roboto, serif;
 }
-.cssLabel {
-    color: #fff;
+
+/* BORDER COLOR */
+.input .MuiOutlinedInput-root fieldset {
+border-color: pink;
 }
-.notchedOutline {    
-    border-color: #EC5990;
-    &:hover {
-        border-color:#FFFFFF
-    }
+
+/* BORDER COLOR ON HOVER */
+.input .MuiOutlinedInput-root:hover fieldset {
+border-color: yellow;
+}
+
+/* BORDER COLOR ON FOCUS*/
+.input .MuiOutlinedInput-root.Mui-focused fieldset {
+border-color: red;
 }
 .resize {
     font-size: 14px;
