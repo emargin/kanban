@@ -1,11 +1,11 @@
 import instance from './instance'
 
-interface IAuthRequest {
+export interface IAuthRequest {
     email: string
     password: string
 }
 
-interface IRegRequest extends IAuthRequest {
+export interface IRegRequest extends IAuthRequest {
     username: string
 }
 
