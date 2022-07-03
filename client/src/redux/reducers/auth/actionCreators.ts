@@ -1,14 +1,14 @@
 import { API, IAuthRequest } from '../../../api/api'
 import { IUser } from '../../../models/IUser'
 import { AppDispatch } from '../../store'
-import { ActionEnum, SetAuthAction, SetErrorAction, SetIsLoadingAction } from './types'
+import { ActionEnum, SetAuthAction, SetErrorAction, SetIsLoadingAction, SetUserAction } from './types'
 
-export const ActionCreators = {
+const AuthActionCreators = {
     setAuth: (auth: boolean): SetAuthAction => ({
         type: ActionEnum.SET_AUTH,
         payload: auth,
     }),
-    setUser: (user: IUser): any => ({ type: ActionEnum.SET_USER, payload: user }),
+    setUser: (user: IUser): SetUserAction => ({ type: ActionEnum.SET_USER, payload: user }),
     setIsLoading: (isLoading: boolean): SetIsLoadingAction => ({
         type: ActionEnum.SET_IS_LOADING,
         payload: isLoading,
@@ -19,23 +19,25 @@ export const ActionCreators = {
     }),
     login: (authRequest: IAuthRequest) => async (dispatch: AppDispatch) => {
         try {
-            dispatch(ActionCreators.setIsLoading(true))
+            dispatch(AuthActionCreators.setIsLoading(true))
             const response = await API.fetchAuth(authRequest)
-            dispatch(ActionCreators.setUser(response.data))
-            dispatch(ActionCreators.setAuth(true))
-            dispatch(ActionCreators.setIsLoading(false))
+            dispatch(AuthActionCreators.setUser(response.data))
+            dispatch(AuthActionCreators.setAuth(true))
+            dispatch(AuthActionCreators.setIsLoading(false))
         } catch (e) {
-            dispatch(ActionCreators.setError('Произошла ошибка'))
+            dispatch(AuthActionCreators.setError('Произошла ошибка'))
         }
     },
     logout: () => async (dispatch: AppDispatch) => {
         try {
-            dispatch(ActionCreators.setIsLoading(true))
-            dispatch(ActionCreators.setUser({} as IUser))
-            dispatch(ActionCreators.setAuth(false))
-            dispatch(ActionCreators.setIsLoading(false))
+            dispatch(AuthActionCreators.setIsLoading(true))
+            dispatch(AuthActionCreators.setUser({} as IUser))
+            dispatch(AuthActionCreators.setAuth(false))
+            dispatch(AuthActionCreators.setIsLoading(false))
         } catch (e) {
-            dispatch(ActionCreators.setError('Произошла ошибка'))
+            dispatch(AuthActionCreators.setError('Произошла ошибка'))
         }
     },
 }
+
+export default AuthActionCreators
