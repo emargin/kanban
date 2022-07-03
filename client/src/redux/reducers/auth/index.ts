@@ -1,5 +1,5 @@
 import { IUser } from "../../../models/IUser"
-import { Action, IAuthState } from "./types"
+import { ActionEnum, ActionTypes, IAuthState } from "./types"
 
 const initialState:IAuthState = {
     isAuth: false,
@@ -8,15 +8,15 @@ const initialState:IAuthState = {
     isLoading: false
 }
 
-export const authReducer = (state=initialState, action: any) => {
+export const authReducer = (state=initialState, action: ActionTypes):IAuthState => {
     switch (action.type){
-        case Action.SET_AUTH: {
-            return {...state, isAuth: true, isLoading: false}
+        case ActionEnum.SET_AUTH: {
+            return {...state, isAuth: action.payload, isLoading: false}
         }
-        case Action.SET_IS_LOADING: {
+        case ActionEnum.SET_IS_LOADING: {
             return {...state, isLoading: action.payload}
         }
-        case Action.SET_ERROR: {
+        case ActionEnum.SET_ERROR: {
             return {...state, error: action.payload, isLoading: false}
         }
         default: 
