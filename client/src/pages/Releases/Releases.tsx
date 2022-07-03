@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Releases.module.scss'
 
-const Releases = (): JSX.Element => {
+function Releases(): JSX.Element {
     return <></>
 }
 export default Releases

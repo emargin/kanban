@@ -1,7 +1,7 @@
-import React, { ComponentType, ReactNode } from "react"
-import { RouteProps } from "react-router-dom"
-import Auth from "../pages/Auth/Auth"
-import Registration from "../pages/Registration/Registration"
+import React, { ComponentType, ReactNode } from 'react'
+import { RouteProps } from 'react-router-dom'
+import Auth from '../pages/Auth/Auth'
+import Registration from '../pages/Registration/Registration'
 
 export interface IRouter {
     path: string
@@ -11,13 +11,12 @@ export interface IRouter {
 
 export enum RouteName {
     LOGIN = '/auth',
-    REGISTRATION = '/registration'
+    REGISTRATION = '/registration',
 }
 
-
 export const publicRouters: IRouter[] = [
-    { path: RouteName.LOGIN, element: Auth , exact: true },
-    { path: RouteName.REGISTRATION, element: Registration, exact: true }
+    { path: RouteName.LOGIN, element: Auth, exact: true },
+    { path: RouteName.REGISTRATION, element: Registration, exact: true },
 ]
 
 // export const privatRouters: IRouter[] = [

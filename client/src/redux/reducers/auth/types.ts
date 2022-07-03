@@ -1,5 +1,4 @@
-import { IUser } from "../../../models/IUser";
-
+import { IUser } from '../../../models/IUser'
 
 export enum ActionEnum {
     SET_AUTH = 'SET_AUTH',
@@ -8,33 +7,31 @@ export enum ActionEnum {
     SET_ERROR = 'SET_ERROR',
 }
 
-
 export interface IAuthState {
-    isAuth: boolean,
-    user: IUser, 
-    isLoading: boolean,     
-    error: string,
+    isAuth: boolean
+    user: IUser
+    isLoading: boolean
+    error: string
 }
-
 
 export type ActionTypes = SetAuthAction | SetUserAction | SetIsLoadingAction | SetErrorAction
 
 export interface SetAuthAction {
-    type: ActionEnum.SET_AUTH,
+    type: ActionEnum.SET_AUTH
     payload: boolean
 }
 
 export interface SetUserAction {
-    type: ActionEnum.SET_USER,
+    type: ActionEnum.SET_USER
     payload: IUser
 }
 
 export interface SetIsLoadingAction {
-    type: ActionEnum.SET_IS_LOADING,
+    type: ActionEnum.SET_IS_LOADING
     payload: boolean
 }
 
 export interface SetErrorAction {
-    type: ActionEnum.SET_ERROR,
+    type: ActionEnum.SET_ERROR
     payload: string
 }

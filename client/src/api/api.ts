@@ -36,5 +36,5 @@ export const API = {
     },
     fetchBoards() {
         return instance.get('/board')
-    }
+    },
 }

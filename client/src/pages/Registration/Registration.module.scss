@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto sans-serif'
+    font-family: 'Roboto', sans-serif;
 }
 
 .regWindow {
@@ -25,28 +25,17 @@
     align-items: center;
 }
 
-.loginTitle {
+.title {
     margin: 13px 0 30px 0;
     font-size: 30px;
-    color: #EC5990;
+    color: #ec5990;
     font-weight: 100;
-}
-
-.loginPostTitle {
-    font-size: 14px;
-    margin-top: 10px;
 }
 
 .input {
     margin: 0 24px 34px 24px;
     width: 290px;
     height: 50px;
-    // & input::-webkit-clear-button; & input::-webkit-outer-spin-button; & input::-webkit-inner-spin-button: {
-    //     display: none;
-    // }
-    // & input["number"]: {
-    //     -moz-appearance: textfield;
-    // }
 }
 
 .regButton {
@@ -56,48 +45,33 @@
     margin-bottom: 16px;
     margin-top: 15px;
     color: #fff;
-    background-color: #EC5990 !important;
-    border: 1px solid #EC5990 !important;
+    background-color: #ec5990;
+    border: 1px solid #ec5990;
     font-size: 14px;
     text-transform: capitalize;
 
     &:hover {
-        background-color: #bf1650 !important;
+        background-color: #bf1650;
     }
 }
 
 .helperLink {
     font-size: 14px;
-    color: rgba(0, 0, 0, 0.38);
     text-decoration: none;
     color: #fff;
 
     &:hover {
-        color: #bf1650 !important;
+        color: #bf1650;
     }
 }
-
+.cssFocused {
+    color: red;
+    background-color: red;
+}
+.notchedOutline {
+    color: red;
+    background-color: red;
+}
 .resize {
     font-size: 14px;
 }
-
-// .cssOutlinedInput:{
-//     color: #fff;
-// }
-
-// .cssFocused: {
-//     color: #fff;
-//     borderColor: #fff;
-//     "& notchedOutline": {
-//         borderColor: "red"
-//       }
-// }
-// .cssLabel: {
-//     color: #fff;
-// }
-// .notchedOutline: {
-//     borderColor: #EC5990;
-//     &&:hover:{
-//         borderColor:#FFFFFF
-//     }
-// }

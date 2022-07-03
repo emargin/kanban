@@ -1,13 +1,13 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
-import styles from './WorkSpace.module.scss'
 import { Link, Route } from 'react-router-dom'
+import styles from './WorkSpace.module.scss'
 import NavPanel from '../../components/NavPanel/NavPanel'
 import Tasks from '../Tasks/Tasks'
 import Releases from '../Releases/Releases'
 import Reports from '../Reports/Reports'
 
-const WorkSpace = (): JSX.Element => {
+function WorkSpace(): JSX.Element {
     return (
         <section className={styles.workSpace}>
             <header className={styles.header}>

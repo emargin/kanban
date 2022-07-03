@@ -3,94 +3,46 @@ import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Registration.module.scss'
 
-const Registration = (): JSX.Element => {
+function Registration(): JSX.Element {
     return (
         <div className={styles.root}>
             <div className={styles.regWindow}>
                 <form
                     className={styles.form}
-                // onSubmit={handleSubmit(handlerForm)}
+                    // onSubmit={handleSubmit(handlerForm)}
                 >
-                    <h2 className={styles.loginTitle}>Регистрация</h2>
+                    <h2 className={styles.title}>Регистрация</h2>
 
                     <TextField
                         id="outlined-basic"
                         variant="outlined"
                         className={styles.input}
-                        InputLabelProps={{
-                            classes: {
-                                root: styles.cssLabel,
-                                focused: styles.cssFocused,
-                            },
-                            className: styles.resize
-                        }}
-                        InputProps={{
-                            classes: {
-                                root: styles.cssOutlinedInput,
-                                focused: styles.cssFocused,
-                                notchedOutline: styles.notchedOutline,
-                            }
-                        }}
-
                         // helperText={(errors.name?.message) || ''}
                         // error={!!errors.name?.message}
-                        autoComplete="off"
+                        inputProps={{
+                            autoComplete: 'off',
+                        }}
                         label="Имя пользователя"
                         type="text"
                     />
 
-
                     <TextField
                         id="outlined-basic"
                         variant="outlined"
                         className={styles.input}
-                        InputLabelProps={{
-                            classes: {
-                                root: styles.cssLabel,
-                                focused: styles.cssFocused,
-                            },
-                            className: styles.resize
-                        }}
-                        InputProps={{
-                            classes: {
-                                root: styles.cssOutlinedInput,
-                                focused: styles.cssFocused,
-                                notchedOutline: styles.notchedOutline,
-                            }
-                        }}
-
                         // helperText={(errors.email?.message) || ''}
                         // error={!!errors.email?.message}
-                        autoComplete="off"
+                        inputProps={{
+                            autoComplete: 'off',
+                        }}
                         label="E-mail"
                         type="text"
                     />
 
-
-
                     <TextField
                         id="outlined-basic"
                         variant="outlined"
                         className={styles.input}
-
-                        InputLabelProps={{
-                            classes: {
-                                root: styles.cssLabel,
-                                focused: styles.cssFocused,
-                            },
-                            className: styles.resize
-                        }}
-                        InputProps={{
-                            classes: {
-                                root: styles.cssOutlinedInput,
-                                focused: styles.cssFocused,
-                                notchedOutline: styles.notchedOutline,
-                            },
-                            inputMode: "numeric"
-                        }}
-
-                        // helperText={(errors.password?.message) || ''}
-                        // error={!!errors.password?.message}
                         autoComplete="off"
                         label="Пароль"
                         type="password"
@@ -100,23 +52,6 @@ const Registration = (): JSX.Element => {
                         id="outlined-basic"
                         variant="outlined"
                         className={styles.input}
-
-                        InputLabelProps={{
-                            classes: {
-                                root: styles.cssLabel,
-                                focused: styles.cssFocused,
-                            },
-                            className: styles.resize
-                        }}
-                        InputProps={{
-                            classes: {
-                                root: styles.cssOutlinedInput,
-                                focused: styles.cssFocused,
-                                notchedOutline: styles.notchedOutline,
-                            },
-                            inputMode: "numeric"
-                        }}
-
                         // helperText={(errors.password?.message) || ''}
                         // error={!!errors.password?.message}
                         autoComplete="off"
@@ -124,11 +59,12 @@ const Registration = (): JSX.Element => {
                         type="password"
                     />
 
-
-                    <Button className={styles.regButton} variant="contained" type="submit" >
+                    <Button className={styles.regButton} variant="contained" type="submit">
                         Регистрация
                     </Button>
-                    <Link to='/auth' className={styles.helperLink}>Вход</Link>
+                    <Link to="/auth" className={styles.helperLink}>
+                        Вход
+                    </Link>
                 </form>
             </div>
         </div>
