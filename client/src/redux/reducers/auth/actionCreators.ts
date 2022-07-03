@@ -31,6 +31,7 @@ const AuthActionCreators = {
     logout: () => async (dispatch: AppDispatch) => {
         try {
             dispatch(AuthActionCreators.setIsLoading(true))
+            await API.sighOut()
             dispatch(AuthActionCreators.setUser({} as IUser))
             dispatch(AuthActionCreators.setAuth(false))
             dispatch(AuthActionCreators.setIsLoading(false))
